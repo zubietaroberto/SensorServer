@@ -5,10 +5,10 @@ from django.db import models
 # Create your models here.
 class Station(models.Model):
     
-    value = models.TextField();
-    name = models.TextField();
-    latitude = models.FloatField();
-    longitude = models.FloatField();
+    value = models.CharField('Identificador', max_length=255)
+    name = models.TextField('Nombre', default='');
+    latitude = models.FloatField('Latitud', default=0);
+    longitude = models.FloatField('Longitud', default=0);
     
     def __unicode__(self):
         return self.name;
@@ -24,9 +24,6 @@ class TemperatureMeasurement(models.Model):
         return "Temperatura: " + self.temperature 
         + " Fecha: " + self.date 
         + " Fuente: " + self.source
-
-admin.site.register(Station)
-admin.site.register(TemperatureMeasurement)
     
     
     

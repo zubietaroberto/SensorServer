@@ -114,6 +114,10 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    #Custom Apps
+    'Temperature',
+    
+    
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
