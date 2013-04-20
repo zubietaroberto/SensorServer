@@ -1,5 +1,11 @@
 # Django settings for SensorServer project.
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -116,6 +122,9 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     #Custom Apps
     'Temperature',
+    
+    #Django Suit Library
+    'suit',
     
     
     'django.contrib.auth',
