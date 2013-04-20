@@ -20,9 +20,6 @@ class TemperatureMeasurement(models.Model):
     source = models.ForeignKey(Station);
     
     def __unicode__(self):
-        return "Temperatura: " + self.temperature 
-        + " Fecha: " + self.date 
-        + " Fuente: " + self.source
-    
+        return self.source.name
     
     
