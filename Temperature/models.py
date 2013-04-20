@@ -22,4 +22,15 @@ class TemperatureMeasurement(models.Model):
     def __unicode__(self):
         return self.source.name
     
+
+class HumidityMeasurement(models.Model):
+    
+    humidity = models.FloatField('Porcentaje de Humedad', blank=False)
+    date = models.DateTimeField('Fecha de registro', default=datetime.now(), blank=False)
+    source = models.ForeignKey(Station)
+    
+    def __unicode__(self):
+        return self.source.name
+    
+    
     
