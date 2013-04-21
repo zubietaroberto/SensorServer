@@ -6,14 +6,35 @@
 	
 	<header class="hero-unit">
 		<h1>Local Weather in Panama City <br />
-		<small>Humidity and temperature in all stations</small></h1>
+		<small>All stations available in the city</small></h1>
+		<a class="btn btn-primary" href="2/"> Launch Test Data</a>
 	</header>
 	
+	<div class="container">
+		<h2>Database Data</h2>
+	</div>	
 	<article class="container" id="map">
 		
 	</article>
 	
+	<div class="container">
+		<h2>All State-Sponsored WiFi Positions</h2>
+	</div>
+	<article class="container" id="iframe">
+		<iframe height="500" scrolling="no" marginheight="0" marginwidth="0" src="http://www.arcgis.com/home/webmap/embedViewer.html?webmap=48f2ef436e98430aaf7801d8fb3bfaf0&amp;zoom=true&amp;scale=true&amp;extent=-79.6930245051009,8.93435970668937,-79.2458577036338,9.12866075238488">
+		
+		</iframe>
+		<br />
+		<small>
+			<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=48f2ef436e98430aaf7801d8fb3bfaf0" style="color:#0000FF;text-align:left" target="_blank">View Larger Map</a>
+		</small>
+	</article>
+	
 	<!-- Scripts -->
 	{% include "Temperature/Common/scripts.html" %}
+	
+	{% load staticfiles %}
+	<script type="text/javascript" charset="utf-8" src="//cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+	<script type="text/javascript" charset="utf-8" src="{% static "js/station_map.js" %}"></script>
 	
 </body>

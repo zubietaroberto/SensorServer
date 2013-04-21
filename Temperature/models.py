@@ -26,6 +26,12 @@ class TemperatureMeasurement(models.Model):
     date = models.DateTimeField('Fecha de registro', default=datetime.now(), blank=False);
     source = models.ForeignKey(Station);
     
+    def parseDate(self):
+        
+        date_format = "%Y/%m/%d/%H/%M/%S"
+        return self.date.strftime(date_format)
+    
+    
     def __unicode__(self):
         return self.source.name
     

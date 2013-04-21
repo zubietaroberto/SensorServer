@@ -5,17 +5,30 @@ Created on Apr 20, 2013
 @license: (CDDL-1.0)
 '''
 
-from Temperature.models import TemperatureMeasurement, Station, \
+from Temperature.Common import serialize_t_measure
+from Temperature.models import Station, TemperatureMeasurement, \
     HumidityMeasurement
 from django.core import serializers
-from django.core.serializers import json
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 
 def index(request):
-    return render(request, 'Temperature/index.html')
+    return render(request, 'Temperature/index.html', {"title": "Index"})
 
+def display_station(request, station_id):
+    
+    station = get_object_or_404(Station, value=station_id)
+        
+    dictionary =  {
+                    'title': station.name, 
+                    'head': station.name,
+                    'value': station.value,
+                    'data': serialize_t_measure(station),
+                   }
+    return render(request, 
+                  'Temperature/station.html',
+                  dictionary)
 
 def put(request, temperature, humidity, station_id):
     
@@ -28,7 +41,7 @@ def put(request, temperature, humidity, station_id):
     humidity_measurement.humidity = humidity
         
     #Find the station
-    station = Station.objects.get_or_create(value=station_id)
+    station = get_object_or_404(Station, value=station_id)
     temperature_measurement.source = station
     humidity_measurement.source = station
     
@@ -41,3 +54,7 @@ def put(request, temperature, humidity, station_id):
 def get_stations(request):
     data = serializers.serialize('json', Station.objects.all())
     return HttpResponse(data, content_type="application/json")
+
+def get_station_t_measurements(request, station_id):
+    station = get_object_or_404(Station, value=station_id)
+    return HttpResponse(serialize_t_measure(station), content_type="application/json")
