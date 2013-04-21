@@ -14,7 +14,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'Temperature/index.html')
 
 
 def put(request, temperature, humidity, station_id):
