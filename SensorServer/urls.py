@@ -1,3 +1,14 @@
+'''
+Created on Apr 20, 2013
+
+@author: zubietaroberto
+'''
+'''
+Created on Apr 20, 2013
+
+@author: zubietaroberto
+@license: (CDDL-1.0)
+'''
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 

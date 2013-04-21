@@ -1,3 +1,9 @@
+'''
+Created on Apr 20, 2013
+
+@author: zubietaroberto
+@license: (CDDL-1.0)
+'''
 # Django settings for SensorServer project.
 
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP

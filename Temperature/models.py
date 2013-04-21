@@ -1,3 +1,10 @@
+'''
+Created on Apr 20, 2013
+
+@author: zubietaroberto
+@license: (CDDL-1.0)
+'''
+
 from datetime import datetime
 from django.db import models
 

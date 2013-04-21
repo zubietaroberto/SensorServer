@@ -1,7 +1,8 @@
 '''
 Created on Apr 20, 2013
 
-@author: RobertoEduardo
+@author: zubietaroberto
+@license: (CDDL-1.0)
 '''
 from Temperature.models import Station, TemperatureMeasurement,\
     HumidityMeasurement

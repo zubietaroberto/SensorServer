@@ -1,3 +1,10 @@
+'''
+Created on Apr 20, 2013
+
+@author: zubietaroberto
+@license: (CDDL-1.0)
+'''
+
 from Temperature.models import TemperatureMeasurement, Station, \
     HumidityMeasurement
 from django.http.response import HttpResponse
