@@ -8,11 +8,11 @@ Created on Apr 20, 2013
 from Temperature.models import TemperatureMeasurement, Station, \
     HumidityMeasurement
 from django.http.response import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Index OK')
-
+    return render(request, 'index.html')
 def put(request, temperature, humidity, station_id):
     
     #Get temperature_measurement Data
