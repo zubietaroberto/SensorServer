@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Index</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- CSS -->
-	{% include "css.html" %}
-	
-</head>
+{% include "head.html" %}
 
 <body>
 	
 	{% include "navbar.html" %}
 	
 	<header class="hero-unit">
-		<h1>Temperature and Humidity <br />
+		<h1>Local Weather in Panama City <br />
 		<small>Humidity and temperature in all stations</small></h1>
 	</header>
+	
+	<article class="container" id="map">
+		
+	</article>
 	
 	<!-- Scripts -->
 	{% include "scripts.html" %}
