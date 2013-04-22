@@ -1,12 +1,21 @@
-{% include "Temperature/Common/head.html" %}
+{% extends "Temperature/Common/base.html" %}
 
-<body>
-	
-	{% include "Temperature/Common/navbar.html" %}
-	
+{% block title %} 
+	All Stations
+{% endblock %}
+
+{% block extra_css %} 
+	<link rel="stylesheet" media="screen" href="//cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+	<![endif]-->
+{% endblock %}
+
+{% block content %}
 	<header class="hero-unit">
 		<h1>Local Weather in Panama City <br />
 		<small>All stations available in the city</small></h1>
+		<br />
 		<a class="btn btn-primary" href="2/"> Launch Test Data</a>
 	</header>
 	
@@ -29,12 +38,10 @@
 			<a href="http://www.arcgis.com/home/webmap/viewer.html?webmap=48f2ef436e98430aaf7801d8fb3bfaf0" style="color:#0000FF;text-align:left" target="_blank">View Larger Map</a>
 		</small>
 	</article>
-	
-	<!-- Scripts -->
-	{% include "Temperature/Common/scripts.html" %}
-	
+{% endblock %}
+
+{% block extra_script %}
 	{% load staticfiles %}
 	<script type="text/javascript" charset="utf-8" src="//cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 	<script type="text/javascript" charset="utf-8" src="{% static "js/station_map.js" %}"></script>
-	
-</body>
+{% endblock %}
